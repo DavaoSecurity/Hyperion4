@@ -1,7 +1,7 @@
-# Hyperion v3.1 For Archlinux/Blackarch or Kali (recommended).
+# Hyperion v4.0 For Archlinux/Blackarch or Kali (recommended).
 Install ArchLinux, then convert to BlackArch, see https://www.blackarch.org/downloads.html, or use Kali Linux in VirtualBox. <br/>
 Backend scripts used to drive results-based automated IT Security system for arcadeusops.com. Written in Bash and Python3. <br/>
-Written by Nathan Jones nathan.jones@arcadeusops.com <br/>
+Written by Nathan Jones nat@davaosecurity.com <br/>
 <br/>
 ins31.sh is the install script but edit to suit your preferences.<br/>
 test.sh is a short script to confirm all is working ok. <br/>
@@ -11,7 +11,7 @@ test.sh is a short script to confirm all is working ok. <br/>
 * For example ./server mysite.com mystuff . See READMEscripts.md for details of command line arguments. <br/>
 * Reports are in a custom directory which is displayed at command prompt after completion. <br/>
 
-# Hyperion v3.1 Scripts
+# Hyperion v4.o Scripts
 <br/>
 # Python port scanner
 pythonscan.sh follow on screen prompts
@@ -65,16 +65,14 @@ websec.sh - Golismero web security scan. <br/>
 dr.sh - nmap scripts to test for SSL vulnerabilities of POODLE and DROWN. <br/>
 
 ## Ethical Notice
-The original code is written by ArcadeusOPS, who are not responsible for misuse of this data gathering tool. Do not use these scripts to navigate websites/devices that take part in any activity that is identified as illegal under the laws and regulations of your government. STAY LEGAL !!<br/>
+The original code is written by Davao Cyber Security, who are not responsible for misuse of this data gathering tool. Do not use these scripts to navigate websites/devices that take part in any activity that is identified as illegal under the laws and regulations of your government. STAY LEGAL !!<br/>
 
 ## License
 MIT License
 Copyright (c) ArcadeusOPS
 
 # TODO Future Test Scripts in Bash, Python, Lua or C++
-simlink attacks https://www.anvilventures.com/blog/defeating-secure-boot-with-symlink-attacks.html <br/>
 Vulnerability Analysis using Nessus and OpenVAS via command line <br/>
-Keylogger detection eg https://thegeekpage.com/detect-keylogger-rat/ <br/>
 
 # Server Setup
 SSH private key exchange rather than public key/password logon
@@ -83,7 +81,7 @@ SSH private key exchange rather than public key/password logon
 Lynis see https://docs.nextcloudpi.com/en/how-to-update-lynis/
 
 # Bugs
-Send issues to info@arcadeusops.com stating nature of issue. A screenshot will help too. Thanks.
+Send issues to nat@davaosecurity.com stating nature of issue. A screenshot will help too. Thanks.
 
 # CPD
 Part of EC-Council ECE/CPD Credits

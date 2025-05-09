@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script for Hyperion v3.x that performs shellshock, heatbleed, VNC and CITRIX vuln scans
+# Script for Hyperion v4.0 that performs shellshock, heatbleed, VNC and CITRIX vuln scans
 # Usage ./back.sh 8.8.8.8 mydir - as single command line argument but can use website instead of IP address eg google.com for 8.8.8.8.
 # First argument $1: $usIP user IP
 # Second Argument $2: $udir directory to store reports
