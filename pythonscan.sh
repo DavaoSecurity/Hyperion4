@@ -1,4 +1,4 @@
-# works on Python3
+# works on Python3 Hyperion v4
 import socket, threading
 
 def TCP_connect(ip, port_number, delay, output):

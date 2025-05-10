@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 # Authors : D4Vinci
-# Recoded by : DucatiNat and codex31. Moved from python2 to python3. All copyrights to Squnity team
+# Hyperion v4 Recoded by : DucatiNat and codex31. Moved from python2 to python3. All copyrights to Squnity team
 # An HTTP Flood Python script that could stop a normal website in 10s It generates a configurable number of random GET requests and sends them to the target
 # Usage pyflooder.py < Hostname > < Port > < Number_of_Attacks >
 

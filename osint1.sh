@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Nathan Jones nwj@inception.bz
+# Hyperion v4OSINT1
 # INSTALL FIRST https://github.com/twintproject/twint https://github.com/sherlock-project/sherlock https://github.com/alpkeskin/mosint
 #
 n=$1 # Username to search
@@ -10,7 +10,7 @@ twint -u $uname --followers --user-full --email --phone -o twint.txt
 sed -i -e '1iTwint files\' twint.txt
 sed -i -e '2i***************************\' twint.txt
 # Sherlock see https://github.com/sherlock-project/sherlock#installation
-cd sherlock 
+cd sherlock
 sherlock --verbose $uname $umail --xlsx sherly.xlsx
 mv sherly.xlsx /root
 cd ..
@@ -31,23 +31,20 @@ sed -i -e '2i***************************\' mosint.txt
 mv mosint.txt /root
 cd ..
 # socan
-cd social-analyzer 
+cd social-analyzer
 python3 app.py --username $1 > socan.txt
 sed -i -e '1iSocial analyser .txt files\' socan.txt
 sed -i -e '2i***************************\' socan.txt
 mv socan.txt /root
 cd ..
 
-
 cat *.txt > allrep.txt
 sed -i -e '1iAll OSINT .txt files\' allrep.txt
 sed -i -e '2i******************************************************\' allrep.txt
 
 # zip
-pass=$(openssl rand -base64 6)
-zip --password ${pass} OSINT1.zip allrep.txt sherly.xlsx
+zip OSINT1.zip allrep.txt sherly.xlsx
 
 # Email Report and Password
-echo " OSINT Report OSINT1.zip" | mail -s "MOSINT SHERLOCK TWINT Report for "$1" " -A OSINT1.zip $2
-echo " Your password for "$1" OSINT1.zip is "${pass}" " | mail -s "Your OSINT1.zip Info" $2
+rm allrep.txt sherly.xlsx mosint.txt sherly.xlsx 
 cd ..
