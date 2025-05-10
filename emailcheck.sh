@@ -1,9 +1,7 @@
 #!/bin/bash
-# Email records check 
-
+# Hyperion v4 Email records check
+# target
 t=$1
-n=$2
-
 #
 dig TXT $1 > spf1.txt
 sed -i '1i SPF Email Settings Results\n----------------------------' spf1.txt
@@ -15,7 +13,5 @@ sed -i '1i DMARC Email Settings Results\n----------------------------' dmar1.txt
 # zip
 zip emailcheck.zip spf1.txt dkim1.txt dmar1.txt
 
-# Email Report and Password
-echo " EmailCheck " | mail -s "DKIM SPF DMARC Check " -A emailcheck.zip $2
-sleep 5
-rm emailcheck.zip spf1.txt dkim1.txt dmar1.txt
+# clean up
+rm spf1.txt dkim1.txt dmar1.txt
