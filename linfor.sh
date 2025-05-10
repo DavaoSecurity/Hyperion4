@@ -1,8 +1,8 @@
 #!/bin/#!/usr/bin/env bash
-# Linux forensics on local machine
-# Last user login    
-lastlog
-last
+# Hyperion v4 Linux forensics on local machine
+# Last user login
+lastlog > lastlog.txt
+last > last.txt
 
 # Users with login shells
 cat /etc/passwd | grep sh$

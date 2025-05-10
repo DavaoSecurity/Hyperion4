@@ -1,5 +1,5 @@
 #!/bin/bash
-# script to check linux system for Malware. Tested on Ubuntu 22.04. This script includes install AND scan procedures.
+# Hyperion v4 script to check linux system for Malware. Tested on Ubuntu 22.04. This script includes install AND scan procedures.
 PATH=/sbin:/bin:/usr/sbin:/usr/bin
 MAILTO=root
 HOME=/
@@ -62,5 +62,5 @@ rm -rf /usr/local/maldetect/quarantine/* # remove quarantined files
 cat lynis.txt clamav.txt rootkit.txt rkhunt.txt lmd.txt | sort > malrep.txt
 sed -i -e '1iCOMBINED MALWARE REPORT Lynis chkrootkit rkhunter ClamAV LMD\' malrep.txt
 sed -i -e '2i****************************************************************\' malrep.txt
-# mail
-mail -s "Malware Report" $umail -a malrep.txt
+# clean up
+rm lynis.txt clamav.txt rootkit.txt rkhunt.txt lmd.txt

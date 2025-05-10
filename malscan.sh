@@ -1,7 +1,6 @@
 #!/bin/bash
-# script to check linux system for Malware. Tested on Ubuntu 22.04. This script is only the malware scan. Installation is already assumed.
+# Hyperion v4 script to check linux system for Malware. This script is only the malware scan. Installation is already assumed.
 H=$1
-M=$2
 P=$3 # PID from netstat
 
 # investigation        netstat -nalp  # for unusual processes and open ports
@@ -13,7 +12,7 @@ cat /proc/$3/stack > stackmal.txt                # investigate Linux malware sta
 ls -al /proc/$3/fd > filedes.txt                 # show malware open file descriptors
 cat /proc/$3/maps > procmaps.txt                 # investigate malware process maps
 cat /proc/$3/status pidstats.txt                 # get the PID status
-cat procPID.txt delbin.txt proc.txt stackmal.txt filedes.txt procmaps.txt pidstats.txt > ProccesID.txt 
+cat procPID.txt delbin.txt proc.txt stackmal.txt filedes.txt procmaps.txt pidstats.txt > ProccesID.txt
 
 # lynis
 lynis audit system | grep malware > lynis.txt
@@ -49,10 +48,6 @@ sed -i -e '1iCOMBINED MALWARE REPORT Lynis chkrootkit rkhunter ClamAV LMD\' malr
 sed -i -e '2i****************************************************************\' malrep.txt
 
 # zip
-pass=$(openssl rand -base64 6)
-zip --password ${pass} malscan.zip procPID.txt delbin.txt proc.txt stackmal.txt filedes.txt procmaps.txt pidstats.txt ProccesID.txt lynis.txt clamav.txt rootkit.txt rkhunt.txt lmd.txt malrep.txt
-# Email Report and Password
-echo " Malware Scan malscan.zip" | mail -s "Malware Scans and Report for "$1" " -A malscan.zip $2
-echo " Your password for "$1" malscan.zip is "${pass}" " | mail -s "Your malscan.zip Info" $2
-sleep 5
+zip malscan.zip procPID.txt delbin.txt proc.txt stackmal.txt filedes.txt procmaps.txt pidstats.txt ProccesID.txt lynis.txt clamav.txt rootkit.txt rkhunt.txt lmd.txt malrep.txt
+# clean up
 rm malscan.zip procPID.txt delbin.txt proc.txt stackmal.txt filedes.txt procmaps.txt pidstats.txt ProccesID.txt lynis.txt clamav.txt rootkit.txt rkhunt.txt lmd.txt malrep.txt

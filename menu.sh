@@ -1,5 +1,5 @@
 #!/bin/bash
-# Bash script list
+# Hyperion v4 Bash script list
 clear
 echo "                                                                              "
 echo "              Security Posture and Vulnerability Tests                        "

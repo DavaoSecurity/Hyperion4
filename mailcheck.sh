@@ -1,5 +1,5 @@
 #!/bin/bash
-# mail setup checker DNS L1
+# Hyperion v4 mail setup checker DNS L1
 # secure email document https://www.cisco.com/c/en/us/support/docs/security/email-security-appliance/215360-best-practice-for-email-authentication.html
 # Usage: ./mailcheck.sh <domain> <selector>
 # DKIM Selector eg selector1, or ask the client if they know it
@@ -36,12 +36,5 @@ cat dkim.txt spf1.txt dmarc1.txt > allmail.txt
 # zip
 zip allmail.zip allmail.txt
 
-# Email Report and Password
-# CHANGE THE EMAIL HERE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-echo " AllMail DKIM SPF DMARC Report" | mail -s "Mail Report for "$1" " -A allmail.zip rav@inception.bz
-sleep 5
+# clean up
 rm allmail.zip allmail.txt dkim.txt spf1.txt dmarc1.txt
-
-
-
-
