@@ -1,5 +1,5 @@
 #!/bin/bash
-# Docker install latest stable
+# Hyperion v4 Docker install latest stable
 clear
 echo " Checking for OWASP ZAP Updates.......... "
 echo " "
@@ -38,8 +38,3 @@ done
 # baseline scan with param file
 sudo docker run -v $(pwd):/zap/wrk/:rw -t ghcr.io/zaproxy/zaproxy:stable zap-baseline.py \
     -t $rtarg -g gen.conf -r $rname.html
-
-# Email Report
-# Sending the email with attachment
-# echo -e "Look at the Summary at top of HTML file" | mail -s "OWASP ZAP Report" -A $rname >clear
-# echo "Email sent successfully."
