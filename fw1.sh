@@ -1,7 +1,7 @@
 #!/bin/bash
-# Script for nmap firewall bypass scans and tests
+# Hyperion v4 furtherScript for nmap firewall bypass scans and tests
+# target
 i=$1
-o=$2
 # nmap vuln on firewall
 sudo nmap -vv -p - $1 --script vuln --script vulners -oX usernmap.xml
 xsltproc usernmap.xml -o usermapfw.html
@@ -25,9 +25,9 @@ sudo nmap -sS -p - --scan-delay 500 -f $1 -oX frag.xml
 xsltproc frag.xml -o frag.html
 
 # zip
-pass=$(openssl rand -base64 6)
-zip --password ${pass} firewallB.zip fin.html frag.html usermapfw.html fwaudit.xml
+# pass=$(openssl rand -base64 6)
+# zip --password ${pass} firewallB.zip fin.html frag.html usermapfw.html fwaudit.xml
+zip firewallB.zip fin.html frag.html usermapfw.html fwaudit.html
 
-# Email Report and Password
-echo " Firewall bypass firewallB.zip" | mail -s "Firewall bypass for "$1" " -A firewallB.zip $2
-echo " Your password for "$1" firewallB.zip is "${pass}" " | mail -s "Your firewallB.zip Info" $2
+# clean up
+rm fin.html fin.xml frag.xml frag.html usermapfw.html fwaudit.xml usernmap.xml
