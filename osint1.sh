@@ -46,5 +46,5 @@ sed -i -e '2i******************************************************\' allrep.txt
 zip OSINT1.zip allrep.txt sherly.xlsx
 
 # Email Report and Password
-rm allrep.txt sherly.xlsx mosint.txt sherly.xlsx 
+rm allrep.txt sherly.xlsx mosint.txt sherly.xlsx
 cd ..
