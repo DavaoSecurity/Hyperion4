@@ -1,1 +1,0 @@
-scp root@194.163.139.59:/root/upd.sh c:\Users\nw_jones\Desktop\upd.sh

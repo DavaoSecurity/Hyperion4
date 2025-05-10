@@ -1,5 +1,5 @@
 #!/bin/bash
-# This script will return the following set of system information:
+# Hyperion v4 This script will return the following set of system information:
 # -Hostname information:
 clear
 echo -e "\e[31;43m***** HOSTNAME INFORMATION *****\e[0m"

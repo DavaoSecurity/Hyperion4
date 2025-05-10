@@ -1,7 +1,7 @@
-# Hyperion v3.1 For Archlinux/Blackarch or Kali (recommended).
+# Hyperion v4 For Archlinux/Blackarch or Kali (recommended).
 Install ArchLinux, then convert to BlackArch, see https://www.blackarch.org/downloads.html, or use Kali Linux in VirtualBox. <br/>
 Backend scripts used to drive results-based automated IT Security system for arcadeusops.com. Written in Bash and Python3. <br/>
-Written by Nathan Jones nathan.jones@arcadeusops.com <br/>
+Written by Nathan Jones nat@davaosecurity.com <br/>
 <br/>
 ins31.sh is the install script but edit to suit your preferences.<br/>
 test.sh is a short script to confirm all is working ok. <br/>
