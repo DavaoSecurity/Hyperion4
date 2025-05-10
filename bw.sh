@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script for Hyperion v3.x for OWASP BlackWidow webapp scanner
+# Script for Hyperion v4 for OWASP BlackWidow webapp scanner
 # INSTALL FIRST https://github.com/1n3/blackwidow
 
 U=$1
@@ -22,14 +22,10 @@ sed -i '1i BlackWidow OWASP Top 10 Results\n----------------------------------' 
 mv /usr/share/blackwidow/bw.txt /root
 cd /
 cd root
-# zip
-pass=$(openssl rand -base64 6)
-zip --password ${pass} bw.zip bw.txt
 
-# Email Report and Password
-echo " OWASP BlackWidow Report bw.zip" | mail -s "OWASP BlackWidow Report for "$1" " -A bw.zip $2
-echo " Your password for "$1" bw.zip is "${pass}" " | mail -s "Your bw.zip Info" $2
-rm bw.zip bx.txt
-cd ..
+# zip
+zip  bw.zip bw.txt
+
+# clean up
 docker stop $(docker ps -a -q)
 docker rm $(docker ps -a -q)

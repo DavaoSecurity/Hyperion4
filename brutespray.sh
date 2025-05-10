@@ -1,9 +1,9 @@
 #!/bin/bash
-#https://github.com/x90skysn3k/brutespray
+# Hyperion v4 https://github.com/x90skysn3k/brutespray
+# target
 G=$1
-M=$2
 
-# nmap 
+# nmap
 # !!! CHANGE PORT NUMBER TO ONE eg 22 for quicker execution  !!!
 nmap -p - -sV $1 -oX brsp.xml
 xsltproc brsp.xml -o brsp.html
@@ -19,10 +19,4 @@ rm *.*
 cd ..
 
 # zip
-pass=$(openssl rand -base64 6)
-zip --password ${pass} brsp.zip brsp.html bsr.zip
-
-# Email Report and Password
-echo " BruteSpray brsp.zip" | mail -s "BruteSpray Report for "$1" " -A brsp.zip $2
-echo " Your password for "$1" brsp.zip is "${pass}" " | mail -s "Your brsp.zip Info" $2
-
+zip  brsp.zip brsp.html bsr.zip

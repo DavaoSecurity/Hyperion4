@@ -1,5 +1,5 @@
 #!/bin/bash
-# Shellshock HeartBleed VNC Citrix testing for backdoors and malware
+# Hyperion v4 Shellshock HeartBleed VNC Citrix testing for backdoors and malware
 s=$1
 d=$2
 
@@ -20,9 +20,5 @@ sudo nmap -vv -sU --script citrix* -p - $1 -oX ctx.xml
 xsltproc ctx.xml -o citrix.html
 
 # zip
-pass=$(openssl rand -base64 6)
-zip --password ${pass} malware.zip shellshock.html shellshock1.html heartbleed.html vnc.html citrix.html
-
-# Email Report and Password
-echo " Malware Report malware.zip" | mail -s "Malware Report for "$1" " -A malware.zip $2
-echo " Your password for "$1" malware.zip is "${pass}" " | mail -s "Your malware.zip Info" $2
+zip malware.zip shellshock.html shellshock1.html heartbleed.html vnc.html citrix.html
+rm hb.xml v.xml ctx.xml shell.xml shell1.xml shellshock.html shellshock1.html heartbleed.html vnc.html citrix.html
