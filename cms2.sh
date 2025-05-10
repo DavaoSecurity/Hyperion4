@@ -1,9 +1,9 @@
 #!/bin/bash
-# Script for Hyperion v3.x that performs Joomla tests
+# Script for Hyperion v4 that performs Joomla tests
 # INSTALL FIRST https://github.com/OWASP/joomscan
 # git clone https://github.com/rezasp/joomscan.git
+# target
 H=$1
-I=$2
 
 # WAF
 wafw00f https://$1 > w.txt
@@ -26,9 +26,4 @@ xsltproc what.xml > whatcms2.html
 cat waf.txt joom.txt j.txt > outputcms2.txt
 
 # zip
-pass=$(openssl rand -base64 6)
-zip --password ${pass} joomla.zip outputcms2.txt whatcms2.html
-
-# Email Report and Password
-echo " Joomla Report joomla.zip" | mail -s "Joomla CMS Report for "$1" " -A joomla.zip $2
-echo " Your password for "$1" joomla.zip is "${pass}" " | mail -s "Your joomla.zip Info" $2
+zip joomla.zip outputcms2.txt whatcms2.html

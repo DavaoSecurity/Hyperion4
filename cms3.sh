@@ -1,8 +1,7 @@
 #!/bin/bash
-# Performs Drupal tests https://github.com/SamJoan/droopescan
-
+# Hyperion v4. Performs Drupal tests https://github.com/SamJoan/droopescan
+# target
 Y=$1
-Q=$2
 
 # WAF
 wafw00f $1 > w.txt
@@ -33,9 +32,4 @@ xsltproc what.xml > whatcms3.html
 cat waf.txt enum1.txt exp1.txt droop.txt > outputcms3.txt
 
 # zip
-pass=$(openssl rand -base64 6)
-zip --password ${pass} drupal.zip outputcms3.txt whatcms3.html what.xml
-
-# Email Report and Password
-echo " Drupal Report drupal.zip" | mail -s "Drupal CMS Report for "$1" " -A drupal.zip $2
-echo " Your password for "$1" drupal.zip is "${pass}" " | mail -s "Your drupal.zip Info" $2
+zip drupal.zip outputcms3.txt whatcms3.html what.xml
