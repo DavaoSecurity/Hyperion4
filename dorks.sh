@@ -1,7 +1,7 @@
 #!/bin/bash
-# fast google dork scanner https://github.com/IvanGlinkin/Fast-Google-Dorks-Scan
+# Hyperion v4 fast google dork scanner https://github.com/IvanGlinkin/Fast-Google-Dorks-Scan
+# target
 i=$1
-z=$2
 
 cd Fast-Google-Dorks-Scan
 docker build -t dorkydorks .
@@ -16,7 +16,3 @@ cd ..
 
 # zip
 zip dork.zip fgds.zip
-
-# Email Report and Password
-echo " Google Dorks dork.zip" | mail -s " Fast Google Dorks Scanner dork.zip "$1" " -A dork.zip $2
-
