@@ -73,7 +73,7 @@ zip --password ${pass} zapattack.zip zapattack.html
 echo " Your password for "$1" zapattack.zip is "${pass}" " | mail -s "Your zapattack.zip Info" $2
 
 # Email Report
-echo " OWASP ZAP ATTACK " | mail -s "OWASP ZAP Attack Report for "$1" " -A zapattack.zip $2 
+echo " OWASP ZAP ATTACK " | mail -s "OWASP ZAP Attack Report for "$1" " -A zapattack.zip $2
 #echo " Email and Password protected Zip file sent successfully to "$remail" ."
 ##sleep 2
 #clear

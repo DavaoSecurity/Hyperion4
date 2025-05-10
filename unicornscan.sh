@@ -8,4 +8,3 @@ zip --password ${pass} unicornscan.zip unis.txt
 echo " Your password for "$1" unicornscan.zip is "${pass}" " | mail -s "Your unicornscan.zip Info" $2
 # Email Report
 echo " UnicornScan " | mail -s "UnicornScan Report for "$1" " -A unicornscan.zip $2
-

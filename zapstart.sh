@@ -14,6 +14,6 @@ zip --password ${pass} zapbase.zip zapbase.html
 echo " Your password for "$1" zapbase.zip is "${pass}" " | mail -s "Your zapbase.zip Info" $2
 
 # Email Report
-echo " OWASP ZAP Baseline " | mail -s "OWASP ZAP Base Report for "$1" " -A zapbase.zip $2 
+echo " OWASP ZAP Baseline " | mail -s "OWASP ZAP Base Report for "$1" " -A zapbase.zip $2
 
 # docker run -v $(pwd):/zap/wrk/:rw --user root ghcr.io/zaproxy/zaproxy:stable zap-baseline.py -t https://imaginet.com.py -g gen.conf -r testreport.html
