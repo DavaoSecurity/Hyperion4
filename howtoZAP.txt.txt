@@ -1,0 +1,15 @@
+Command prompt Powershell
+
+
+ssh root@194.163.139.59
+
+
+glanrhyd8?
+
+
+./zapstart.sh
+
+
+
+
+

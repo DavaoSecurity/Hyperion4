@@ -1,19 +1,16 @@
 #!/bin/bash
-# Script for Hyperion v3.x that performs tests al ALL cloud servers
-# Usage ./cloud.sh 8.8.8.8 mydir - as single command line argument but can use website instead of IP address eg google.com for 8.8.8.8.
-# First argument $1: $usIP user IP
-#second argumnet $2 my directory
-# User Input from  command line arguments
-userIP="$1" # IP address eg 8.8.8.8
-udir="$2" # directory for reports
-echo " "
-echo " The script is running and may take a while ............"
-echo " "
+# script  performs tests on ALL cloud servers
+z=$1
+x=$2
 # nmap vuln
-sudo nmap -vv $userIP --script vuln --script vulners --script discovery -p - -oX vuln.xml
-xslproc vuln.xml -o cloudvuln.html
-# local storage ready for upload to client's container
-mkdir $udir
-mv cloudvuln.html /$udir/cloudvuln.html
-echo " Your results are stored in directory $udir "
-sleep 10
+sudo nmap -vv $1 --script vuln --script vulners --script discovery -p - -oX vuln.xml
+xsltproc vuln.xml -o cloudvuln.html
+
+# zip
+pass=$(openssl rand -base64 6)
+zip --password ${pass} cloudvuln.zip cloudvuln.html 
+
+# Email Report and Password
+echo " Cloud Report cloudvuln.zip" | mail -s "Cloud Server Report for "$1" " -A cloudvuln.zip $2
+echo " Your password for "$1" cloudvuln.zip is "${pass}" " | mail -s "Your cloudvuln.zip Info" $2
+

@@ -1,0 +1,1 @@
+docker run -v $(pwd):/zap/wrk/:rw --user root ghcr.io/zaproxy/zaproxy:stable zap-baseline.py -t https://imaginet.com.py -g gen.conf -r testreport.html

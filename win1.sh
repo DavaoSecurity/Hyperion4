@@ -1,36 +1,27 @@
 #!/bin/bash
-# Script for Hyperion v3.x that performs tests on AD/LDAP on Windows devices
-# Usage ./win1.sh 8.8.8.8 mydir - as single command line argument but can use website instead of IP address eg google.com for 8.8.8.8.
-# First argument $1: $usIP user IP
-# second argument $2 mydir
-# User Input from  command line arguments
-userIP="$1" # IP address eg 8.8.8.8
-udir="$2" # directory for reports
-echo " "
-echo " The script is running and may take a while ............"
-echo " "
+# Script performs tests on AD/LDAP on Windows devices
+L=$1
+A=$2
 # convert IP short form
 # userIP=$(dig $usIP +short)
 # echo "Your IP address is: " $userIP # for testing only remove for headless operation
-# echo ""
-# sleep 10
+
 # find active directory; enumerate domains
-sudo nmap -vv -sU -sS -sV --script smb-enum-domains.nse --script smb-enum-domains.nse -p 389, 445, U:137, T:139 $userIP -oX unmap.xml
+sudo nmap -vv -sU -sS -sV --script smb-enum-domains.nse --script smb-enum-domains.nse -p 389, 445, U:137, T:139 $1 -oX unmap.xml
 xsltproc unmap.xml -o unmapAD.html
 # LDAP search
-sudo sudo nmap -p 389 --script ldap-search --script-args 'ldap.username="cn=ldaptest,cn=users,dc=cqure,dc=net",ldap.password=ldaptest,
-ldap.qfilter=users,ldap.attrib=sAMAccountName' $userIP -oX usernmap.xml
+sudo sudo nmap -p 389 --script ldap-search --script-args 'ldap.username="cn=ldaptest,cn=users,dc=cqure,dc=net",ldap.password=ldaptest,ldap.qfilter=users,ldap.attrib=sAMAccountName' $1 -oX usernmap.xml
 xsltproc usernmap.xml -o usernmapLDAP.html
-sudo nmap -p 389 --script ldap-search --script-args 'ldap.username="cn=ldaptest,cn=users,dc=cqure,dc=net",ldap.password=ldaptest,ldap.qfilter=custom,ldap.searchattrib="operatingSystem",ldap.searchvalue="Windows *Server*",ldap.attrib={operatingSystem,whencreated,OperatingSystemServicePack}' $userIP -oX umap1.xml
+sudo nmap -p 389 --script ldap-search --script-args 'ldap.username="cn=ldaptest,cn=users,dc=cqure,dc=net",ldap.password=ldaptest,ldap.qfilter=custom,ldap.searchattrib="operatingSystem",ldap.searchvalue="Windows *Server*",ldap.attrib={operatingSystem,whencreated,OperatingSystemServicePack}' $1 -oX umap1.xml
 xsltproc umap1.xml -o umapLDAP1.html
 # nmap vuln
-sudo nmap -vv $userIP --script vuln --script vulners -p - -oX usernmap2.xml
-xslproc usernmap2.xml -o usermapvulnWIN.html
-# local storage ready for upload to client's container
-mkdir $udir
-mv runmapAD.html /$udir/unmapAD.html
-mv usermapLDAP.html /$udir/usermapLDAP.html
-mv umapLDAP1.html /$udir/umapLDAP1.html
-mv usernmapvulnWIN.html /$udir/usernmapvulnWIN.html
-echo " Your results are stored in directory $udir "
-sleep 10
+sudo nmap -vv $1 --script vuln --script vulners -p - -oX usernmap2.xml
+xsltproc usernmap2.xml -o usermapvulnWIN.html
+
+# zip
+pass=$(openssl rand -base64 6)
+zip --password ${pass} ADLDAP.zip unmapAD.html usernmapLDAP.html umapLDAP1.html usermapvulnWIN.html
+
+# Email Report and Password
+echo " AD and LDAP Windows Report ADLDAP.zip" | mail -s "AD and LDAP Report for "$1" " -A ADLDAP.zip $2
+echo " Your password for "$1" ADLDAP.zip is "${pass}" " | mail -s "Your ADLDAP.zip Info" $2

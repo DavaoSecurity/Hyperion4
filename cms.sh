@@ -1,41 +1,42 @@
-##!/bin/bash
-# Script for Hyperion v3.x that performs general CMS tests using WafWoof and Wapiti
-# Usage ./cms.sh 8.8.8.8 mydir - as single command line argument but can use website instead of IP address eg google.com for 8.8.8.8.
-# First argument $1: $usIP user IP
-# second argument $2 my dir
-echo " "
-echo " The script is running and may take a while ............"
-echo " "
-# User Input from  command line arguments
-userIP="$1" # IP address eg 8.8.8.8
-udir="$2" # directory for reports
+#!/bin/bash
+
+E=$1
+V=$2
+
 # CMS recon and enumeration
 # General CMS Audit script using Firewall, HTTP/HTTPS and HTML scans. Good for any type of CMS. Uses many tools
-# like WhatWeb, WafW00f. The installed CMS will be automatically detected.
-# nmap vuln vulners  on CMS server
-sudo nmap -vv $userIP --script vuln --script vulners –sV --script http-enum --script html-cms -p - -oX usernmap.xml
-xslproc usernmap.xml -o usermapCMSall.html
+# like WhatWeb, WafW00f. The installed CMS will be automatically detected; nmap vuln vulners  on CMS server
+sudo nmap -vv $1 --script vuln --script vulners –sV --script http-enum --script html-cms -p - -oX usernmap.xml
+xsltproc usernmap.xml -o usermapCMSall.html
 # WAF
-wafw00f $userIP > w.txt
+wafw00f $1 > w.txt
 cat w.txt | grep WAF > waf.txt
 sed -i '1i WafWoof Results\n----------------------' waf.txt
 # Wapiti
-cd wapiti
-python3 wapiti –u http://$userIP -f html -o /root/wapiti.html
-cd ..
+wapiti --update
+wapiti -u https://$1 
+cd /root/.wapiti/scans/
+zip wapiti.zip *.*
+mv wapiti.zip /root
+rm -r *.*
+cd /
+cd root
 # whatweb
-whatweb -v -a 4 -l --logxml=what.xml $userIP
+whatweb -v -a 4 -l --logxml=what.xml $1
 xsltproc what.xml > whatcms.html
 # rapidscan
-sudo python2.7 ./rapidscan.py $userIP
- # cd to results directory
- # cat all txt files to output rapid.txt
- sed -i '1i Rapidscan Output\--------------------' rapid.txt
+sudo python2.7 ./rapidscan.py $1
+sed -i '1i Rapidscan Output\--------------------' rapid.txt
+rm RS-Debug-ScanLog
+
 # text file combine
 cat waf.txt rapid.txt > outputcms.txt
-# local storage ready for upload to client's container
-mkdir $udir
-mv outputcms.txt /root/$udir/outputcms.txt
-mv *.html /root/$udir/
-echo " Your results are stored in directory $udir "
-sleep 10
+
+# zip
+pass=$(openssl rand -base64 6)
+zip --password ${pass} CMS.zip usermapCMSall.html waf.txt wapiti..zip whatcms.html outputcms.txt RS-Vulnerability-Report
+
+# Email Report and Password
+echo " General CMS Report CMS.zip" | mail -s "General CMS Malware Report for "$1" " -A CMS.zip $2
+echo " Your password for "$1" CMS.zip is "${pass}" " | mail -s "Your CMS.zip Info" $2
+rm RS-Vulnerability-Report

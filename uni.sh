@@ -1,19 +1,22 @@
-echo " "
-echo " The script is running and may take a while ............"
-echo " "#!/bin/bash
+#!/bin/bash
 # Script for Hyperion v3.x that performs Uniscan tests fri LFI RFI and RCE vulnerabilities
-# Usage ./uni.sh 8.8.8.8 mydir - as single command line argument but can use website instead of IP address eg google.com for 8.8.8.8.
-# First argument $1: $usIP user IP
-# secondargumnet $2 mydir
-# User Input from  command line arguments
-userIP="$1" # IP address eg 8.8.8.8
-udir="$2" # directory for reports
+# INSTALL FIRST https://sourceforge.net/projects/uniscan/    https://www.hackingloops.com/uniscan/
+
+R=$1
+F=$2
+
 # uniscan
-perl ./uniscan.pl -u https://$userIP/ -qweds > uni.txt
-sed -i '1i LFI, RFI and RCE Detetcion from Janus Tests\n---------------------------------------' uniscan.txt
-# local storage ready for upload to client's container
-mkdir $udir
-cd $udir
-mv uniscan.txt /$udir/uniscan.txt
-echo " Your results are stored in directory $udir "
-sleep 10
+cd Uniscan
+perl ./uniscan.pl -u https://$1/ -qweds > uni.txt
+sed -i '1i LFI, RFI and RCE Detetcion from Inception\n---------------------------------------' uniscan.txt
+mv uniscan.txt /root
+cd ..
+# zip
+pass=$(openssl rand -base64 6)
+zip --password ${pass} uniscan.zip uniscan.txt
+
+# Email Report and Password
+echo " Uniscan Report uniscan.zip" | mail -s "LFI RFI Uniscan Report for "$1" " -A uniscan.zip $2
+echo " Your password for "$1" uniscan.zip is "${pass}" " | mail -s "Your uniscan.zip Info" $2
+rm uniscan.zip uniscan.txt
+cd ..
