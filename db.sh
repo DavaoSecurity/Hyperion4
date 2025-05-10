@@ -1,7 +1,7 @@
 #!/bin/bash
-# Script  performs database server tests using SQL cripts and nmap
+# Hyperion v4 Script  performs database server tests using SQL cripts and nmap
+# target
 r=$1
-t=$2
 
 # nmap vuln
 sudo nmap -vv $1 --script vuln --script vulners -p - -oX unmap.xml
@@ -11,9 +11,7 @@ sudo nmap -p - --script ms-sql-info --script mysql-databases --script ms-sql-que
 xsltproc us.xml -o nmapdb.html
 
 # zip
-pass=$(openssl rand -base64 6)
-zip --password ${pass} database.zip unmapdb.html nmapdb.html
+zip database.zip unmapdb.html nmapdb.html
 
-# Email Report and Password
-echo " Database SQL Report database.zip" | mail -s "Database (no SQLMAP) Report for "$1" " -A database.zip $2
-echo " Your password for "$1" database.zip is "${pass}" " | mail -s "Your database.zip Info" $2
+# clean up
+rm unmap.xml unmap.html us.xml us.html
