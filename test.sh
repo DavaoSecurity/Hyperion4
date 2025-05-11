@@ -1,5 +1,5 @@
 #!/bin/bash
-# Test script for Hyperion v3.x that attempts Nmap scan/enumeration on all ports with Safe Scripts
+# Test script for Hyperion v4 that attempts Nmap scan/enumeration on all ports with Safe Scripts
 # Usage ./test.sh 8.8.8.8 mydir as single command line argument but can use website instead of IP address eg google.com for 8.8.8.8
 # First argument: $usIP  either IP address or domain name
 # Second arguement: $udir user directory

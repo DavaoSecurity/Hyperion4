@@ -1,10 +1,9 @@
 #!/bin/bash
-# Script performs tests on webapp using nmap and SQLMap
+# Hyperion v4 Script performs tests on webapp using nmap and SQLMap
 # INSTALL FIRST https://sqlmap.org/
 git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git sqlmap-dev
 
-Z=$1
-S=$2
+Z=$1 # target
 L=$3 # logon page to attack
 
 # nmap vuln
@@ -16,9 +15,7 @@ cat sql1.txt | grep 'ssl\|SSL\|OSVDB\|enabled\|open\|Server\|Running\|OS\|Target
 sed -i '1i SQLi Vulnerability\n --------------------' sqli.txt
 
 # zip
-pass=$(openssl rand -base64 6)
-zip --password ${pass} sql.zip usermapWebApp.html sqli.txt
+zip sql.zip usermapWebApp.html sqli.txt
 
-# Email Report and Password
-echo " SQL Report sq.zip" | mail -s "SQL Injection Report for "$1" " -A sql.zip $2
-echo " Your password for "$1" sql.zip is "${pass}" " | mail -s "Your sql.zip Info" $2
+# clean up
+rm usermapWebApp.html sqli.txt usernmap.xml

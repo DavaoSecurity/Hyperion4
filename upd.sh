@@ -1,4 +1,5 @@
 #!/bin/bash
+# Hyperion v4 update script with malware scan
 sudo apt update && sudo apt upgrade -y && sudo apt dist-upgrade -y
 sudo apt autoclean && sudo apt autoremove -y
 rkhunter --propupd

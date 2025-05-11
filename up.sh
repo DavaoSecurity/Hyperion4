@@ -1,5 +1,5 @@
 #!/bin/bash
-# use only for Hyperion v2.x on Archlinux/Blackarch
+# use only for Hyperion v4 on Archlinux/Blackarch
 export LC_ALL="en_US.UTF-8"
 sudo nmap --script-update
 # sudo pacman -Syu # for Archlinux
