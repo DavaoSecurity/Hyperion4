@@ -1,7 +1,7 @@
 #!/bin/bash
-# Script performs tests on AD/LDAP on Windows devices
-L=$1
-A=$2
+# Hyperion v4 Script performs tests on AD/LDAP on Windows devices
+L=$1 # target
+
 # convert IP short form
 # userIP=$(dig $usIP +short)
 # echo "Your IP address is: " $userIP # for testing only remove for headless operation
@@ -19,9 +19,7 @@ sudo nmap -vv $1 --script vuln --script vulners -p - -oX usernmap2.xml
 xsltproc usernmap2.xml -o usermapvulnWIN.html
 
 # zip
-pass=$(openssl rand -base64 6)
-zip --password ${pass} ADLDAP.zip unmapAD.html usernmapLDAP.html umapLDAP1.html usermapvulnWIN.html
+zip ADLDAP.zip unmapAD.html usernmapLDAP.html umapLDAP1.html usermapvulnWIN.html
 
-# Email Report and Password
-echo " AD and LDAP Windows Report ADLDAP.zip" | mail -s "AD and LDAP Report for "$1" " -A ADLDAP.zip $2
-echo " Your password for "$1" ADLDAP.zip is "${pass}" " | mail -s "Your ADLDAP.zip Info" $2
+# clean up
+rm unmapAD.html usernmapLDAP.html umapLDAP1.html usermapvulnWIN.html unmap.xml usernmap.xml umap1.xml usernmap2.xml

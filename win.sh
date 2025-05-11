@@ -1,7 +1,7 @@
 #!/bin/bash
-# Script performs NetBIOS, SMB, USer Accounts, and backdoor tests on Windows servers
-G=$1
-K=$2
+# Hyperion v4 Script performs NetBIOS, SMB, USer Accounts, and backdoor tests on Windows servers
+G=$1 # Target
+
 # SMB OS discovery SMB signing check smb vulnerability scripts SMB brute force
 sudo nmap -p 139, 445 --script smb-os-discovery --script smb-security-mode --script smb-vuln-* --script smb-brute -–script-args userdb=common_pass.txt,passdb=common_users.txt $1 -oX smb.xml
 xsltproc smb.xml -o smb.html
@@ -18,17 +18,15 @@ xsltproc enum.xml -o enum.html
 sudo nmap -p 445 --script smb-double-pulsar-backdoor -oX pulsar.xml $1 -vv
 xsltproc pulsar.xml -o pulsar.html
 # rdpscan CVE-2019-0708 bluekeep vuln
-#sudo ./rdpscan $userIP > rdp.txt
-#cat rdp.txt | grep vulnerable > rdp1.txt
-#sed -i '1i Windows SMB, RDP BlueKeep Assessment\n----------------------------------' > rdp1.txt
+sudo ./rdpscan $userIP > rdp.txt
+cat rdp.txt | grep vulnerable > rdp1.txt
+sed -i '1i Windows SMB, RDP BlueKeep Assessment\n----------------------------------' > rdp1.txt
 # nmap vuln
 sudo nmap -vv $1 --script vuln --script vulners -p - -oX vuln.xml
 xsltproc vuln.xml -o vuln.html
 
 # zip
-pass=$(openssl rand -base64 6)
-zip --password ${pass} windowss.zip smb.html api.html net.html enum.html pulsar.html vuln.html
+zip windowss.zip smb.html api.html net.html enum.html pulsar.html vuln.html rdp1.txt
 
-# Email Report and Password
-echo " SMB NetBIOS Users Report windowss.zip" | mail -s "Windows Server Report for "$1" " -A windowss.zip $2
-echo " Your password for "$1" windowss.zip is "${pass}" " | mail -s "Your windowss.zip Info" $2
+# clean up
+rm smb.html api.html net.html enum.html pulsar.html vuln.html api.xml net.xml enum.xml pulsar.xml rdp.txt
