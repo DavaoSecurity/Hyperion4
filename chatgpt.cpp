@@ -1,6 +1,7 @@
 
 // Hyperion v4 chatbot script in C ++
-// To create a C++ program that interacts with the OpenAI API (like ChatGPT), you'll need to use a library for making HTTP requests, as C++ does not have built-in support for HTTP. One popular choice is the `cpr` library, which is a simple wrapper around `libcurl`.
+// To create a C++ program that interacts with the OpenAI API (like ChatGPT), you'll need to use a library for making HTTP requests, as C++ does not have built-in support for HTTP.
+// One popular choice is the `cpr` library, which is a simple wrapper around `libcurl`.
 //  This example assumes you have an API key from OpenAI.
 // Prerequisites
 // Install the cpr library**: You can find it [here](https://github.com/libcpr/cpr). Follow the installation instructions for your platform.
