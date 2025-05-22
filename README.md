@@ -87,4 +87,4 @@ Lynis see https://docs.nextcloudpi.com/en/how-to-update-lynis/
 Send issues to info@davaosecurity.com stating nature of issue. A screenshot will help too. Thanks.
 
 # CPD
-Part of EC-Council ECE/CPD Credits
+Part of ECE/CPD Credits
