@@ -1,5 +1,5 @@
 # pip install openai
-# Hyperion v4 GUI to Chatgpt prompt with error handling and chat save by Nathan W Jones nat@davaosecurity.com
+# Hyperion v4 GUI to Chatgpt prompt with error handling and chat save by Nathan W Jones nat@davaosecurity.com for ECE CRedits
 # Error Handling: The application now includes error handling for API calls.
 # Replace 'YOUR_API_KEY' with your actual OpenAI API key
 # If an error occurs (e.g., network issues, invalid API key), a message box will display the error message.
