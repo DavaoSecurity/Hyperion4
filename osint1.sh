@@ -45,6 +45,7 @@ sed -i -e '2i******************************************************\' allrep.txt
 # zip
 zip OSINT1.zip allrep.txt sherly.xlsx
 
-# Email Report and Password
+# Email Report
+echo "This is your OSINT Report in OSINT1.zip." | mail -s "OSINT Report" nat@davaosecurity.com
 rm allrep.txt sherly.xlsx mosint.txt sherly.xlsx
 cd ..

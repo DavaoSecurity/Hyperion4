@@ -67,6 +67,7 @@ sed -i -e '2i******************************************************\' allrep.txt
 
 # zip
 zip OSINT.zip allrep.txt dnsrec.html harvest.html dns.html disc.html sniper.zip RFTW.zip photon.zip
+echo "This is your OSINT Report in OSINT.zip." | mail -s "OSINT Report" nat@davaosecurity.com
 
 # Email Report and Password
 rm allrep.txt dnsrec.html harvest.html dns.html disc.html sniper.zip RFTW.zip photon.zip disc.xml dns.xml harvets.xml dnsrec.xm
