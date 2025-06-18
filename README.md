@@ -8,14 +8,24 @@ ins31.sh is the install script but edit to suit your preferences.<br/>
 test.sh is a short script to confirm all is working ok. <br/>
 
 # Usage
-* Most scripts take two command line arguments, the IP address or domain name, and directory to store reports. <br/>
-* For example ./server mysite.com mystuff . See READMEscripts.md for details of command line arguments. <br/>
+* Most scripts take two command line arguments, the IP address or domain name, and the email to send Reports to. <br/>
+* For example ./server mysite.com nat@davaosecurity.com. <br/>
 * Reports are in a custom directory which is displayed at command prompt after completion. <br/>
 
 # Hyperion v4 Scripts
 <br/>
-# Python port scanner
-pythonscan.sh follow on screen prompts
+# Python and PowerShell
+fullOSINTAPI.py -
+exploitsuggester.py -
+hunter.py -
+iker.py -
+malscan.py -
+nist.py -
+phish.py -
+pyflooder.py -
+rapidscan.py -
+zap.py -
+CRLF.ps1 -
 
 # Vulnerabilities
 exploit.sh - nmap and searchsploit (exploitdb) for exploit discovery. <br/>
