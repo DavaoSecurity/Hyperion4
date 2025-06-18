@@ -1,7 +1,7 @@
 # Hyperion v4 For Archlinux/Blackarch or Kali (recommended).
 This is an improved and redesigned update to the discontinued Hyperion v2/v3 writen by Nathan W Jones whilst as ArcadeusOPS and Inception cyber security companies. Nathan wrote all these scripts so please acknowledge that. <br/>
 Install ArchLinux, then convert to BlackArch, see https://www.blackarch.org/downloads.html, or use Kali Linux in VirtualBox. <br/>
-Backend scripts used to drive results-based automated IT Security system for arcadeusops.com. Written in Bash and Python3. <br/>
+Backend scripts used to drive results-based automated IT Security system for Davao Cyber Security. Written in Bash and Python3. <br/>
 Written by Nathan Jones nat@davaosecurity.com <br/>
 <br/>
 ins31.sh is the install script but edit to suit your preferences.<br/>
