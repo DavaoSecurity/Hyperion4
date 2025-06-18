@@ -10,7 +10,7 @@ test.sh is a short script to confirm all is working ok. <br/>
 # Usage
 * Most scripts take two command line arguments, the IP address or domain name, and the email to send Reports to. <br/>
 * For example ./server mysite.com nat@davaosecurity.com. <br/>
-* Reports are in a custom directory which is displayed at command prompt after completion. <br/>
+* Reports are in a custom directory or the local directory, which is displayed at command prompt after completion. <br/>
 
 # Hyperion v4 Scripts
 <br/>
