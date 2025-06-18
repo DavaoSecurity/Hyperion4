@@ -1,7 +1,6 @@
 #!/bin/bash
-# Hyperion v4 SICAT exploit finder https://github.com/justakazh/sicat
-# target
-M=$1
+# SICAT exploit finder https://github.com/justakazh/sicat
+
 cd sicat
 # --packetstorm --msfmodule --exploitalert --nvd
 nmap --open -sV $1 -oX nmap_out.xml
@@ -16,6 +15,11 @@ rm *.xml
 cd ..
 
 # zip
+# pass=$(openssl rand -base64 6)
+# zip --password ${pass} sicat.zip sicatA.zip
 zip sicat.zip sicatA.zip
-# clean up
+# Email Report and Password
+echo " SICAT Exploit Search sicat.zip" | mail -s " SICAT from NMAP Report for Cerebus " -A sicat.zip ducatinat@protonmail.com
+# echo " Your password for "$1" sicat.zip is "${pass}" " | mail -s " Your sicat.zip Info " $2
+sleep 5
 rm zip sicat.zip sicatA.zip

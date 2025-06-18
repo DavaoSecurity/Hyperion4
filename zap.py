@@ -1,7 +1,6 @@
-#!/bin/bash
 # A helpful reference: https://github.com/zaproxy/zaproxy/wiki/ApiPython
 # Start by grabbing the module with ‘pip install python-owasp-zap-v2.4’
-# Author nat@davaosecurity.com
+# Author nathan.jones@arcadeusops.pro
 import time
 import urllib2
 from pprint import pprint

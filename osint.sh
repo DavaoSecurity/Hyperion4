@@ -1,11 +1,14 @@
 #!/usr/bin/env bash
-# Hyperion v4 OSINT scans
+# Nathan Jones nwj@inception.bz
 # INSTALL FIRST https://github.com/thewhiteh4t/FinalRecon https://github.com/powerexploit/Ashok https://github.com/laramies/theHarvester/wiki/Installation
 # git clone https://github.com/thewhiteh4t/FinalRecon.git
 # cd FinalRecon
 # pip3 install -r requirements.txt
-# taget
+#
+#
+
 r=$1
+k=$2
 
 # NOTE!!!! Don't forget to insert your API Keys in theHarvester."
 
@@ -46,7 +49,7 @@ xsltproc disc.xml -o disc.html
 # mv trape.txt /root
 # cd ..
 # photon
-cd Photon
+cd Photon 
 python3 photon.py --update
 python3 photon.py -u $1 --dns --keys -l 5 -o /root/Photon/Results
 cd Results
@@ -66,10 +69,13 @@ sed -i -e '1iAll OSINT .txt files\' allrep.txt
 sed -i -e '2i******************************************************\' allrep.txt
 
 # zip
-zip OSINT.zip allrep.txt dnsrec.html harvest.html dns.html disc.html sniper.zip RFTW.zip photon.zip
-echo "This is your OSINT Report in OSINT.zip." | mail -s "OSINT Report" nat@davaosecurity.com
+pass=$(openssl rand -base64 6)
+zip --password ${pass} OSINT.zip allrep.txt dnsrec.html harvest.html dns.html disc.html sniper.zip RFTW.zip photon.zip
 
 # Email Report and Password
-rm allrep.txt dnsrec.html harvest.html dns.html disc.html sniper.zip RFTW.zip photon.zip disc.xml dns.xml harvets.xml dnsrec.xm
+echo " OSINT Report OSINT.zip" | mail -s "General OSINT Report for "$1" " -A OSINT.zip $2
+echo " Your password for "$1" OSINT.zip is "${pass}" " | mail -s "Your OSINT.zip Info" $2
+
 docker stop $(docker ps -a -q)
 docker rm $(docker ps -a -q)
+

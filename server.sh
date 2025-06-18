@@ -1,8 +1,7 @@
 #!/bin/bash
-# Hyperion v4 Script for performs general server tests
-3 target
+# Script for performs general server tests
 Q=$1
-
+W=$2
 # nmap vuln
 sudo nmap -vv $1 --script vuln --script vulners -p - -oX usernmap.xml
 xsltproc usernmap.xml -o usernmapServer.html
@@ -18,7 +17,9 @@ sudo nmap -vv sV --allports --version-all --version-trace $1 -oX serv.xml
 xsltproc serv.xml -o services.html
 
 # zip
-zip server.zip usernmapServer.html os.html services.html os1.html
+pass=$(openssl rand -base64 6)
+zip --password ${pass} server.zip usernmapServer.html os.html services.html os1.html
 
-# clean up
-rm usernmapServer.html os.html services.html os1.html usernmap.xml os.xml serv.xml
+# Email Report and Password
+echo " General Server Report server.zip" | mail -s "General Sererv Tests Report for "$1" " -A server.zip $2
+echo " Your password for "$1" server.zip is "${pass}" " | mail -s "Your server.zip Info" $2

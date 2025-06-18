@@ -1,6 +1,7 @@
 #!/bin/bash
-# Hyperion v4 Script performs VPN tests IKE and pptp
-N=$1 # target
+# Script performs VPN tests IKE and pptp
+N=$1
+V=$2
 
 # iker.py to analyse the security of the key exchange phase in IPsec based VPNs
 python iker.py -v -o $1 > ik.txt
@@ -34,7 +35,7 @@ xsltproc ciscoasa.xml -o ciscoasa.html
 sudo nmap -vv 50, 500, 1701, 1723, 4500 --script http-cisco-anyconnect $1 -oX ciscoany.xml
 xsltproc ciscoany.xml -o ciscoany.html
 # Pulse SSL VPN scan
-sudo nmap -n 50, 500, 1701, 1723, 4500 --script http-pulse_ssl_vpn -n $1 -oX pulse.xml
+sudo nmap -n 50, 500, 1701, 1723, 4500 --script http-pulse_ssl_vpn -n $1 -oXpulse.xml
 xsltproc pulse.xml -o pulse.html
 # brute force VPN for ID's
 cd ike-scan
@@ -45,7 +46,9 @@ cat ik.txt uvpn1.txt fake.txt > outputvpnall.txt
 mv fake.txt /root
 cd ..
 # zip
-zip vpn.zip uservpnall.html UNmapvpn.html pptp.html UrNmapVPN.html vpncheck.html ciscoasa.html ciscoany.html pulse.html outputvpnall.txt
+pass=$(openssl rand -base64 6)
+zip --password ${pass} vpn.zip uservpnall.html UNmapvpn.html pptp.html UrNmapVPN.html vpncheck.html ciscoasa.html ciscoany.html pulse.html outputvpnall.txt
 
-# clean up
-rm ik.txt uvpn1.txt fake.txt fa.txt uservpnall.html UNmapvpn.html pptp.html UrNmapVPN.html vpncheck.html ciscoasa.html ciscoany.html pulse.html outputvpnall.txt usermap.xml pulse.xml pptp.xml vpncheck.xml ciscoasa.xml ciscoany.xml
+# Email Report and Password
+echo " VPN Report vpn.zip" | mail -s "Detailed VPN Reports for "$1" " -A vpn.zip $2
+echo " Your password for "$1" vpn.zip is "${pass}" " | mail -s "Your vpn.zip Info" $2

@@ -1,5 +1,6 @@
 #!/bin/bash
-# Script for Hyperion v4 that performs DOS attack
+# Script for Hyperion v3.x that performs DOS attack
+
 D=$1 # IP address eg 8.8.8.8
 U=$2 # user search term
 T=$3 # length of attacks in seconds
