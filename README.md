@@ -4,8 +4,6 @@ Install ArchLinux, then convert to BlackArch, see https://www.blackarch.org/down
 Backend scripts used to drive results-based automated IT Security system for Davao Cyber Security. Written in Bash and Python3. <br/>
 Written by Nathan Jones nat@davaosecurity.com <br/>
 <br/>
-ins31.sh is the install script but edit to suit your preferences.<br/>
-test.sh is a short script to confirm all is working ok. <br/>
 
 # Usage
 * Most scripts take two command line arguments, the IP address or domain name, and the email to send Reports to. <br/>
