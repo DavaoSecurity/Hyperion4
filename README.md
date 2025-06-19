@@ -1,5 +1,5 @@
 # Hyperion v4 For Archlinux/Blackarch or Kali (recommended).
-This is an improved and redesigned update to the discontinued Hyperion v2/v3 writen by Nathan W Jones whilst as ArcadeusOPS and Inception cyber security companies. Nathan wrote all these scripts so please acknowledge that. <br/>
+This is an improved and redesigned update to the discontinued Hyperion v2/v3 writen by Nathan W Jones whilst as ArcadeusOPS and Inception cyber security companies. <br/>
 Install ArchLinux, then convert to BlackArch, see https://www.blackarch.org/downloads.html, or use Kali Linux in VirtualBox. <br/>
 Backend scripts used to drive results-based automated IT Security system for Davao Cyber Security. Written in Bash and Python3. <br/>
 Written by Nathan Jones nat@davaosecurity.com <br/>
@@ -28,9 +28,6 @@ exploit.sh - nmap and searchsploit (exploitdb) for exploit discovery. <br/>
 le.sh - Linux exploit suggester. <br/>
 we.sh - Windows exploit suggester. <br/>
 back.sh - tests for ShellShock and HeartBleed issues as well as testing VNC and CITRX setups for backdoors/malware. <br/>
-
-# Run All
-runall.sh - customise what scripts you want by running this single command line input. incomplete; in development. <br/>
 
 # Firewall
 firewall.sh - firewall fingerprinting and WAF detection using nmap and WAFWoof. <br/>
@@ -76,18 +73,7 @@ The original code is written by Nathan W Jones, who is not responsible for misus
 
 ## License
 MIT License
-Copyright (c) ArcadeusOPS
-
-# TODO Future Test Scripts in Bash, Python, Lua or C++
-simlink attacks https://www.anvilventures.com/blog/defeating-secure-boot-with-symlink-attacks.html <br/>
-Vulnerability Analysis using Nessus and OpenVAS via command line <br/>
-Keylogger detection eg https://thegeekpage.com/detect-keylogger-rat/ <br/>
-
-# Server Setup
-SSH private key exchange rather than public key/password logon
-
-# UPDATES
-Lynis see https://docs.nextcloudpi.com/en/how-to-update-lynis/
+Copyright (c) Davao Cyber Security
 
 # Bugs
 Send issues to info@davaosecurity.com stating nature of issue. A screenshot will help too. Thanks.
