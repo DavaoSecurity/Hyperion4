@@ -3,12 +3,12 @@ This is an improved and redesigned update to the discontinued Hyperion v2/v3 wri
 Backend scripts used to drive results-based automated IT Security system for Davao Cyber Security. Written in Bash and Python3. Written by Nathan Jones nat@davaosecurity.com <br/>
 
 # Usage
-* Most scripts take two command line arguments, the IP address or domain name, and the email to send Reports to. For example ./server mysite.com nat@davaosecurity.com. <br/>
-* Reports are in a custom directory or the local directory, which is displayed at command prompt after completion. <br/>
+Most scripts take two command line arguments, the IP address or domain name, and the email to send Reports to. For example ./server mysite.com nat@davaosecurity.com. <br/>
+Reports are in a custom directory or the local directory, which is displayed at command prompt after completion. <br/>
 
 # Python and PowerShell
-fullOSINTAPI.py - API based OSINt <br/>
-exploitsuggester.py - explaoit suggestions. <br/>
+fullOSINTAPI.py - API based OSINT. <br/>
+exploitsuggester.py - exploit suggester. <br/>
 hunter.py - API based Hunter tool. <br/>
 iker.py - VPN analysis. <br/>
 malscan.py - malware scan. <br/>
