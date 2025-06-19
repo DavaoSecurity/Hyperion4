@@ -11,17 +11,17 @@ Written by Nathan Jones nat@davaosecurity.com <br/>
 * Reports are in a custom directory or the local directory, which is displayed at command prompt after completion. <br/>
 
 # Python and PowerShell
-fullOSINTAPI.py -
-exploitsuggester.py -
-hunter.py -
-iker.py -
-malscan.py -
-nist.py -
-phish.py -
-pyflooder.py -
-rapidscan.py -
-zap.py -
-CRLF.ps1 -
+fullOSINTAPI.py - gnbgfnbgfn
+exploitsuggester.py - fgh 
+hunter.py - dfgn gf
+iker.py - dfgh 
+malscan.py - dfgn 
+nist.py - dfg 
+phish.py - dfg 
+pyflooder.py - dfgh 
+rapidscan.py - dfhg 
+zap.py - dfhg 
+CRLF.ps1 - dfg n
 
 # Vulnerabilities
 exploit.sh - nmap and searchsploit (exploitdb) for exploit discovery. <br/>
