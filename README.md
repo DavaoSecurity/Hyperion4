@@ -51,6 +51,11 @@ sshbf.sh
 nmap.sh
 nmap1.sh
 nmap2.sh
+hydra.sh
+serv.sh
+
+# Forensics
+linfor.sh -  Linux forensics. <br/>
 
 # Content Management Systems
 cms.sh -  performs general CMS tests using WafWoof and Wapiti not listed below, such as SilverStripe. <br/>
@@ -81,6 +86,8 @@ shodan.sh
 spiderfoot.sh
 sub3r.sh
 torbot.sh
+mailcheck.sh
+
 
 # Malware
 mal.sh - malware attack vector detection using nmap detection methods. <br/>
@@ -106,11 +113,28 @@ slowhttptest.sh
 httpbf.sh
 brutespray.sh
 nikto.sh
+OLDzapstart.sh
+nettacker.sh
 
 # Crypto
 dr.sh - nmap scripts to test for SSL vulnerabilities of POODLE and DROWN. <br/>
 sslyze.sh
 dr.sh -  POODLE and SSL analysis
+
+# Miscellaneous
+cleanup.sh
+delmail.sh
+dosdeinstall.sh
+docstop.sh
+malscaninstall.sh
+
+# txt files
+passwords.txt
+big.txt
+commonpass.txt
+commonusers.txt
+dnsmap.txt
+users.txt
 
 ## Ethical Notice
 The original code is written by Nathan W Jones, who is not responsible for misuse of these tools. Do not use these scripts to navigate websites/devices that take part in any activity that is identified as illegal under the laws and regulations of your government. STAY LEGAL !!<br/>
