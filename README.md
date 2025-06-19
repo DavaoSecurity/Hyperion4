@@ -77,12 +77,12 @@ namesearch.sh <br/>
 nmapdkim.sh <br/>
 darkdig.sh <br/>
 ashok.sh - OSINT recon <br/>
-sherl.sh
-shodan.sh
-spiderfoot.sh
-sub3r.sh
-torbot.sh
-mailcheck.sh
+sherl.sh <br/>
+shodan.sh <br/>
+spiderfoot.sh <br/>
+sub3r.sh <br/>
+torbot.sh <br/>
+mailcheck.sh <br/>
 
 # Malware
 mal.sh - malware attack vector detection using nmap detection methods. <br/>
@@ -93,7 +93,7 @@ vpn.sh - performs tests on VPNs using IKE and PPTP protocols. <br/>
 # DOS Attacks (Stress Testing)
 DOS.sh - uses pyflooder.py to perform HTTP Flood DOS attacks. <br/>
 DOS1.sh - searches for possible DOS vector attack surfaces using nmap. <br/>
-dosde.sh - DOS detection
+dosde.sh - DOS detection. <br/>
 
 # Web Apps
 webapp.sh - Web Apps tests using nmap, SQLMap, OWASP ZAP , and RapidScan. <br/>
@@ -101,15 +101,15 @@ uni.sh - uses Uniscan to discover LFI RFI and RCE vulnerabilities on Web Apps. <
 bw.sh - vulnerability assessment for Web Apps using OWASP BlackWidow. <br/>
 websec.sh - Golismero web security scan. <br/>
 DockerWorkaround.txt -  solution to running ZAP in Docker <br/>
-zapattack.sh
-zapstart.sh
-xsser.sh
-slowhttptest.sh
-httpbf.sh
-brutespray.sh
-nikto.sh
-OLDzapstart.sh
-nettacker.sh
+zapattack.sh - OWASP ZAP Attack Mode in Docker. <br/>
+zapstart.sh - OWASP ZAP Normal Mode in Docker. <br/>
+xsser.sh - Cross Site script analysis. <br/>
+slowhttptest.sh - DOS Slow Loris attack on HTTP. <br/>
+httpbf.sh - HTTP attack. <br/>
+brutespray.sh - Password spraying. <br/>
+nikto.sh - NIKTO webserver alanysis. <br/>
+OLDzapstart.sh - previous OWASP ZAP that may work on older machines. <br/>
+nettacker.sh - NETTACKER scanner. <br/>
 
 # Crypto
 dr.sh - nmap scripts to test for SSL vulnerabilities of POODLE and DROWN. <br/>
@@ -124,12 +124,12 @@ docstop.sh - Docker stop and cleanup. <br/>
 malscaninstall.sh - malscan.sh installation. <br/>
 
 # txt files for brute forcing
-passwords.txt
-big.txt
-commonpass.txt
-commonusers.txt
-dnsmap.txt
-users.txt
+passwords.txt <br/>
+big.txt <br/>
+commonpass.txt <br/>
+commonusers.txt <br/>
+dnsmap.txt <br/>
+users.txt <br/>
 
 ## Ethical Notice
 The original code is written by Nathan W Jones, who is not responsible for misuse of these tools. Do not use these scripts to navigate websites/devices that take part in any activity that is identified as illegal under the laws and regulations of your government. STAY LEGAL !!<br/>
@@ -139,7 +139,7 @@ MIT License
 Copyright (c) Davao Cyber Security
 
 # Bugs
-Send issues to info@davaosecurity.com stating nature of issue. A screenshot will help too. Thanks.
+Send issues to info@davaosecurity.com stating nature of issue. A screenshot will help too. Thanks.  <br/>
 
 # CPD
-Part of ECE/CPD Credits
+Part of ECE/CPD Credits  <br/>
