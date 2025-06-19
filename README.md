@@ -3,23 +3,22 @@ This is an improved and redesigned update to the discontinued Hyperion v2/v3 wri
 Backend scripts used to drive results-based automated IT Security system for Davao Cyber Security. Written in Bash and Python3. Written by Nathan Jones nat@davaosecurity.com <br/>
 
 # Usage
-* Most scripts take two command line arguments, the IP address or domain name, and the email to send Reports to. <br/>
-* For example ./server mysite.com nat@davaosecurity.com. <br/>
+* Most scripts take two command line arguments, the IP address or domain name, and the email to send Reports to. For example ./server mysite.com nat@davaosecurity.com. <br/>
 * Reports are in a custom directory or the local directory, which is displayed at command prompt after completion. <br/>
 
 # Python and PowerShell
-fullOSINTAPI.py - gnbgfnbgfn <br/>
-exploitsuggester.py - fgh <br/>
-hunter.py - dfgn gf <br/>
-iker.py - dfgh <br/>
-malscan.py - dfgn <br/>
-nist.py - dfg <br/>
-phish.py - dfg <br/>
-pyflooder.py - dfgh <br/>
-rapidscan.py - dfhg <br/>
-zap.py - dfhg <br/>
-pythonscan.py - <br/>
-CRLF.ps1 - convert CFLF to LF <br/>
+fullOSINTAPI.py - API based OSINt <br/>
+exploitsuggester.py - explaoit suggestions. <br/>
+hunter.py - API based Hunter tool. <br/>
+iker.py - VPN analysis. <br/>
+malscan.py - malware scan. <br/>
+nist.py - NIST NVD tool. <br/>
+phish.py - phishing tool. <br/>
+pyflooder.py - Python based Denial of Service attack. <br/>
+rapidscan.py - RapidScan for OSINt. <br/>
+zap.py - OWASP ZAP Python script. <br/>
+pythonscan.py - Python port scan. <br/>
+CRLF.ps1 - batch convert CFLF to LF. <br/>
 
 # Vulnerabilities
 exploit.sh - nmap and searchsploit (exploitdb) for exploit discovery. <br/>
@@ -27,9 +26,9 @@ vuln.sh - <br/>
 le.sh - Linux exploit suggester. <br/>
 we.sh - Windows exploit suggester. <br/>
 back.sh - tests for ShellShock and HeartBleed issues as well as testing VNC and CITRX setups for backdoors/malware. <br/>
-openvas.sh
-unicornscan.sh
-goby.sh
+openvas.sh -  OPENVAS vulnerability script. <br/>
+unicornscan.sh - UniCorn scanner via Docker. <br/>
+goby.sh - GoBuster tool for directory brute forcing. <br/>
 
 
 # Firewall
