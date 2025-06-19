@@ -1,5 +1,5 @@
 # Hyperion v4 For Parrot or Kali Linux
-This is an improved and redesigned update to the discontinued Hyperion v2/v3 writen by Nathan W Jones whilst as ArcadeusOPS and Inception cyber security companies. <br/>
+This is an improved and redesigned update to the discontinued Hyperion v2/v3 written by Dr. Nathan W Jones whilst as ArcadeusOPS and Inception cyber security companies. <br/>
 Backend scripts used to drive results-based automated IT Security system for Davao Cyber Security. Written in Bash and Python3. Written by Nathan Jones nat@davaosecurity.com <br/>
 
 # Usage
@@ -29,7 +29,6 @@ back.sh - tests for ShellShock and HeartBleed issues as well as testing VNC and 
 openvas.sh -  OPENVAS vulnerability script. <br/>
 unicornscan.sh - UniCorn scanner via Docker. <br/>
 goby.sh - GoBuster tool for directory brute forcing. <br/>
-
 
 # Firewall
 firewall.sh - firewall fingerprinting and WAF detection using nmap and WAFWoof. <br/>
@@ -84,7 +83,6 @@ spiderfoot.sh
 sub3r.sh
 torbot.sh
 mailcheck.sh
-
 
 # Malware
 mal.sh - malware attack vector detection using nmap detection methods. <br/>
