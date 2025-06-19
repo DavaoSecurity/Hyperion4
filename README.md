@@ -1,8 +1,6 @@
-# Hyperion v4 For Archlinux/Blackarch or Kali (recommended).
+# Hyperion v4 For Parrot or Kali Linux
 This is an improved and redesigned update to the discontinued Hyperion v2/v3 writen by Nathan W Jones whilst as ArcadeusOPS and Inception cyber security companies. <br/>
-Install ArchLinux, then convert to BlackArch, see https://www.blackarch.org/downloads.html, or use Kali Linux in VirtualBox. <br/>
-Backend scripts used to drive results-based automated IT Security system for Davao Cyber Security. Written in Bash and Python3. <br/>
-Written by Nathan Jones nat@davaosecurity.com <br/>
+Backend scripts used to drive results-based automated IT Security system for Davao Cyber Security. Written in Bash and Python3. Written by Nathan Jones nat@davaosecurity.com <br/>
 
 # Usage
 * Most scripts take two command line arguments, the IP address or domain name, and the email to send Reports to. <br/>
