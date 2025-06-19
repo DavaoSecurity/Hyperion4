@@ -62,8 +62,8 @@ wpscan.sh - WordPress tests using WPScan. <br/>
 joombf.sh - Joomla brute force. <br/>
 
 # OSINT, DNS, Email Check
-NATOSINT.sh -  . <br/>
-fullosint.sh - . <br/>
+NATOSINT.sh -  a basic tool for OSINT. <br/>
+fullosint.sh - a comprehensice tool for OSINT. <br/>
 osint.sh - . <br/>
 osint1.sh - . <br/>
 dns.sh <br/>
