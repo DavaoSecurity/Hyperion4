@@ -22,7 +22,7 @@ CRLF.ps1 - batch convert CFLF to LF. <br/>
 
 # Vulnerabilities
 exploit.sh - nmap and searchsploit (exploitdb) for exploit discovery. <br/>
-vuln.sh - <br/>
+vuln.sh - search for vulnerabilities. <br/>
 le.sh - Linux exploit suggester. <br/>
 we.sh - Windows exploit suggester. <br/>
 back.sh - tests for ShellShock and HeartBleed issues as well as testing VNC and CITRX setups for backdoors/malware. <br/>
