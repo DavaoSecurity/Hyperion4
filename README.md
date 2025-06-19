@@ -64,25 +64,25 @@ joombf.sh - Joomla brute force. <br/>
 # OSINT, DNS, Email Check
 NATOSINT.sh -  a basic tool for OSINT. <br/>
 fullosint.sh - a comprehensice tool for OSINT. <br/>
-osint.sh - . <br/>
-osint1.sh - . <br/>
-dns.sh <br/>
-dmitry.sh <br/>
-dork.sh <br/>
-emailcheck.sh <br/>
-finalrecon.sh <br/>
-mxtool.sh <br/>
-namesOSINT.sh <br/>
-namesearch.sh <br/>
-nmapdkim.sh <br/>
-darkdig.sh <br/>
-ashok.sh - OSINT recon <br/>
-sherl.sh <br/>
-shodan.sh <br/>
-spiderfoot.sh <br/>
-sub3r.sh <br/>
-torbot.sh <br/>
-mailcheck.sh <br/>
+osint.sh - dnseum script. <br/>
+osint1.sh - for social media. <br/>
+dns.sh - DNs enumeration. <br/>
+dmitry.sh - DMITRY tool for OSINt. <br/>
+dork.sh - Google DORKS on a target. <br/>
+emailcheck.sh - check email for errors in SPF, DKIM and DMARC. <br/>
+finalrecon.sh - comprehensive FINALRECON too for a very detailed OSINT analysis. <br/>
+mxtool.sh - uing MXTOOL for email analysis. <br/>
+namesOSINT.sh - OSINT on a name. <br/>
+namesearch.sh - OSINT on a person's name. <br/>
+nmapdkim.sh - nmap script to assess DKIM email setup. <br/>
+darkdig.sh - search the Dark Web for OSINT threads. <br/>
+ashok.sh - OSINT recon using ASHOK. <br/>
+sherl.sh - Sherlock too for social media. <br/>
+shodan.sh - SHODAN tool, use own API. <br/>
+spiderfoot.sh - a detailed tool using SpiderFoot, with great Reporting and Graphics. <br/>
+sub3r.sh - sublister tool. <br/>
+torbot.sh - use the TOR for OSINT. <br/>
+mailcheck.sh - check email configuration e.g. SPF, DKIM and DMARC. <br/>
 
 # Malware
 mal.sh - malware attack vector detection using nmap detection methods. <br/>
