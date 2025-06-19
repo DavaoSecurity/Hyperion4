@@ -40,15 +40,15 @@ db.sh -  test any database server for vulnerabilities via nmap. (See webapp.sh f
 ftp.sh - nmap tests for any FTP server. <br/>
 mail.sh - POP mail server tests with nmap. <br/>
 mail1.sh - SMTP mail server tests nmap and ismtp. <br/>
-server.sh - nmap test for Linix/Windows servers in general. <br/>
+server.sh - nmap test for Linux/Windows servers in general. <br/>
 win.sh -  NetBIOS, SMB, User Accounts, and backdoor tests on Windows servers. <br/>
 win1.sh - performs tests on AD/LDAP Windows servers. <br/>
-sshbf.sh
-nmap.sh
-nmap1.sh
-nmap2.sh
-hydra.sh
-serv.sh
+sshbf.sh - SSH brute force. <br/>
+nmap.sh - general NMAP scan. <br/>
+nmap1.sh - NMAP HTTP scripts. <br/>
+nmap2.sh - very aggressive NMAP scans. <br/>
+hydra.sh - HYDRA brute force scripts. <br/>
+serv.sh - local server enumeration. <br/>
 
 # Forensics
 linfor.sh -  Linux forensics. <br/>
@@ -58,8 +58,8 @@ cms.sh -  performs general CMS tests using WafWoof and Wapiti not listed below, 
 cms1.sh - WordPress scans. <br/>
 cms2.sh - Joomla tests. <br/>
 cms3.sh - Drupal tests. <br/>
-wpscan.sh
-joombf.sh
+wpscan.sh - WordPress tests using WPScan. <br/>
+joombf.sh - Joomla brute force. <br/>
 
 # OSINT, DNS, Email Check
 NATOSINT.sh -  . <br/>
@@ -113,17 +113,17 @@ nettacker.sh
 
 # Crypto
 dr.sh - nmap scripts to test for SSL vulnerabilities of POODLE and DROWN. <br/>
-sslyze.sh
-dr.sh -  POODLE and SSL analysis
+sslyze.sh - analyse SSL setup. <br/>
+dr.sh -  POODLE and SSL analysis. <br/>
 
 # Miscellaneous
-cleanup.sh
-delmail.sh
-dosdeinstall.sh
-docstop.sh
-malscaninstall.sh
+cleanup.sh - cleanup script. Use with caution. <br/>
+delmail.sh - delete root mail. <br/>
+dosdeinstall.sh - dosde.sh installation. <br/>
+docstop.sh - Docker stop and cleanup. <br/>
+malscaninstall.sh - malscan.sh installation. <br/>
 
-# txt files
+# txt files for brute forcing
 passwords.txt
 big.txt
 commonpass.txt
