@@ -10,9 +10,6 @@ Written by Nathan Jones nat@davaosecurity.com <br/>
 * For example ./server mysite.com nat@davaosecurity.com. <br/>
 * Reports are in a custom directory or the local directory, which is displayed at command prompt after completion. <br/>
 
-# Hyperion v4 Scripts
-<br/>
-<br/>
 # Python and PowerShell
 fullOSINTAPI.py -
 exploitsuggester.py -
