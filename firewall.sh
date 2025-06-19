@@ -19,4 +19,3 @@ zip --password ${pass} firewallA.zip waffy.html fwrules.html waf2.txt
 # Email Report and Password
 echo " Firewall and WAF Report firewallA.zip" | mail -s "WAF and Firewall Report for "$1" " -A firewallA.zip $2
 echo " Your password for "$1" firewallA.zip is "${pass}" " | mail -s "Your firewallA.zip Info" $2
-

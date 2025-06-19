@@ -21,17 +21,17 @@ phish.py - dfg <br/>
 pyflooder.py - dfgh <br/>
 rapidscan.py - dfhg <br/>
 zap.py - dfhg <br/>
-CRLF.ps1 - dfg n <br/>
+CRLF.ps1 - convert CFLF to LF <br/>
 
 # Vulnerabilities
 exploit.sh - nmap and searchsploit (exploitdb) for exploit discovery. <br/>
+vuln.sh - <br/>
 le.sh - Linux exploit suggester. <br/>
 we.sh - Windows exploit suggester. <br/>
 back.sh - tests for ShellShock and HeartBleed issues as well as testing VNC and CITRX setups for backdoors/malware. <br/>
 
 # Firewall
 firewall.sh - firewall fingerprinting and WAF detection using nmap and WAFWoof. <br/>
-fw1.sh - firewall bypass test and firewall rules detection using nmap. <br/>
 
 # Servers
 cloud.sh - uses nmap to test any cloud server. <br/>
@@ -49,6 +49,23 @@ cms1.sh - WordPress scans. <br/>
 cms2.sh - Joomla tests. <br/>
 cms3.sh - Drupal tests. <br/>
 
+# OSINT, DNS, Email Check
+NATOSINT.sh -  . <br/>
+fullosint.sh - . <br/>
+osint.sh - . <br/>
+osint1.sh - . <br/>
+dns.sh <br/>
+dmitry.sh <br/>
+dork.sh <br/>
+emailcheck.sh <br/>
+finalrecon.sh <br/>
+mxtool.sh <br/>
+namesOSINT.sh <br/>
+namesearch.sh <br/>
+nmapdkim.sh <br/>
+darkdig.sh <br/>
+ashok.sh - OSINT recom <br/>
+
 # Malware
 mal.sh - malware attack vector detection using nmap detection methods. <br/>
 
@@ -64,6 +81,7 @@ webapp.sh - Web Apps tests using nmap, SQLMap, OWASP ZAP , and RapidScan. <br/>
 uni.sh - uses Uniscan to discover LFI RFI and RCE vulnerabilities on Web Apps. <br/>
 bw.sh - vulnerability assessment for Web Apps using OWASP BlackWidow. <br/>
 websec.sh - Golismero web security scan. <br/>
+DockerWorkaround.txt -  solution to running ZAP in Docker <br/>
 
 # Crypto
 dr.sh - nmap scripts to test for SSL vulnerabilities of POODLE and DROWN. <br/>
