@@ -52,6 +52,7 @@ serv.sh - local server enumeration. <br/>
 
 # Forensics
 linfor.sh -  Linux forensics. <br/>
+winfor.ps1 - Windows forensics <br/> 
 
 # Content Management Systems
 cms.sh -  performs general CMS tests using WafWoof and Wapiti not listed below, such as SilverStripe. <br/>
